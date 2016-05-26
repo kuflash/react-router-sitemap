@@ -1,5 +1,7 @@
 # React Router Sitemap
 
+[![Build Status](https://travis-ci.org/kuflash/react-router-sitemap.svg?branch=master)](https://travis-ci.org/kuflash/react-router-sitemap)
+
 Модуль для генерации карты сайта по конфигурации `react-router`.
 Может фильтровать пути, а также заменять динамические параметры вида `:paramName`
 на переданные значения.
