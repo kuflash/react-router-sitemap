@@ -1,0 +1,6 @@
+.idea/
+.DS_Store
+/node_modules
+sitemap.xml
+
+npm-debug.log
