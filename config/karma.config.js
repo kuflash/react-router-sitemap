@@ -64,7 +64,10 @@ module.exports = function (config) {
 						loader: 'babel-loader',
 					}
 				]
-			}
+			},
+			node: {
+				fs: 'empty',
+			},
 		},
 
 		webpackServer: {
