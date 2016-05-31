@@ -1,7 +1,7 @@
 require('babel-register');
 
 const router = require('./router').default;
-const buildSitemap = require('../').default;
+const Sitemap = require('../').default;
 
 const filter = {
 	isValid: false,
@@ -24,10 +24,8 @@ const params = {
 	],
 };
 
-buildSitemap({
-	router,
-	filter,
-	params,
-	hostname: 'http://my-site.ru',
-	dist: 'sitemap.xml',
-});
+(
+	new Sitemap({ router, filter, params })
+		.build('http://my-site.ru')
+		.save('./sitemap.xml')
+);
