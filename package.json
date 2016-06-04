@@ -6,7 +6,7 @@
 	"scripts": {
 		"lint": "eslint --ext .js,.jsx ./config ./example ./lib ./test",
 		"test": "karma start ./config/karma.config.js",
-		"build-example": "cd example && node ./sitemap-builder.js"
+		"example": "cd example && node ./sitemap-builder.js"
 	},
 	"author": "Igor Uvarov <kuflash@ya.ru> (http://kuflash.ru)",
 	"license": "MIT",
