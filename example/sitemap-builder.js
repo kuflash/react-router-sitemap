@@ -3,7 +3,7 @@ require('babel-register');
 const router = require('./router').default;
 const Sitemap = require('../').default;
 
-const filter = {
+const filterConfig = {
 	isValid: false,
 	rules: [
 		/\/auth/,
@@ -11,7 +11,7 @@ const filter = {
 	],
 };
 
-const params = {
+const paramsConfig = {
 	'/projects/:projectName': [
 		{ projectName: 'hello-world' },
 		{ projectName: 'second-project' },
@@ -25,7 +25,9 @@ const params = {
 };
 
 (
-	new Sitemap({ router, filter, params })
+	new Sitemap(router)
+		.filterPaths(filterConfig)
+		.applyParams(paramsConfig)
 		.build('http://my-site.ru')
 		.save('./sitemap.xml')
 );
