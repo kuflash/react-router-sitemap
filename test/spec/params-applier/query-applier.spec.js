@@ -1,5 +1,5 @@
 import 'jasmine-collection-matchers';
-import applyQuery from '../../../lib/param-rules-applier/query-applier';
+import applyQuery from '../../../lib/params-applier/query-applier';
 
 describe('query applier', () => {
 

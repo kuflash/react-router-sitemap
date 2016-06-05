@@ -1,7 +1,7 @@
 import 'jasmine-collection-matchers';
 import rules from '../../data/param-rules';
 import { pathsWithParams, paths } from '../../data/paths';
-import applyParams from '../../../lib/param-rules-applier';
+import applyParams from '../../../lib/params-applier';
 
 describe('param rules applier', () => {
 
