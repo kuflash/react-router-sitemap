@@ -16,8 +16,8 @@
   "author": "Igor Uvarov <kuflash@ya.ru> (http://kuflash.ru)",
   "license": "MIT",
   "files": [
-    "./index.js",
-    "./lib"
+    "index.js",
+    "lib"
   ],
   "devDependencies": {
     "babel": "^6.5.2",
