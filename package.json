@@ -1,6 +1,6 @@
 {
   "name": "react-router-sitemap",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Module to generate a sitemap for react-router configuration",
   "repository": {
     "type": "git",
@@ -16,8 +16,8 @@
   "author": "Igor Uvarov <kuflash@ya.ru> (http://kuflash.ru)",
   "license": "MIT",
   "files": [
-    "./index.js",
-    "./lib"
+    "index.js",
+    "lib"
   ],
   "devDependencies": {
     "babel": "^6.5.2",
