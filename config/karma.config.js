@@ -12,7 +12,7 @@ module.exports = function (config) {
 			'karma-webpack',
 			'karma-jasmine',
 			'karma-jasmine-matchers',
-			'karma-phantomjs2-launcher',
+			'karma-phantomjs-launcher',
 		],
 
 		// list of files / patterns to load in the browser
@@ -53,7 +53,7 @@ module.exports = function (config) {
 
 		// start these browsers
 		// available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-		browsers: ['PhantomJS2'],
+		browsers: ['PhantomJS'],
 
 		webpack: {
 			devtool: 'inline-source-map',
