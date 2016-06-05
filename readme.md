@@ -1,6 +1,6 @@
 # React Router Sitemap
 
-[![Build Status](https://travis-ci.org/kuflash/react-router-sitemap.svg?branch=master)](https://travis-ci.org/kuflash/react-router-sitemap)
+[![Build Status](https://travis-ci.org/kuflash/react-router-sitemap.svg?branch=master)](https://travis-ci.org/kuflash/react-router-sitemap) [![npm version](https://badge.fury.io/js/react-router-sitemap.svg)](https://badge.fury.io/js/react-router-sitemap)
 
 Module for generate sitemap by [React Router](https://www.npmjs.com/package/react-router) configuration. Also it can filter paths and replace params (like a `:paramName`) in dynamic paths.
 
