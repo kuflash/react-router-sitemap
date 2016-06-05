@@ -11,6 +11,10 @@
 	},
 	"author": "Igor Uvarov <kuflash@ya.ru> (http://kuflash.ru)",
 	"license": "MIT",
+	"files": [
+		"./index.js",
+		"./lib"
+	],
 	"devDependencies": {
 		"documentation": "git://github.com/documentationjs/documentation.git#v4.0.0-beta5",
 		"eslint": "^2.10.1",
