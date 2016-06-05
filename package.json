@@ -2,6 +2,10 @@
   "name": "react-router-sitemap",
   "version": "1.0.0",
   "description": "Module to generate a sitemap for react-router configuration",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kuflash/react-router-sitemap.git"
+  },
   "main": "index.js",
   "scripts": {
     "lint": "eslint --ext .js,.jsx ./config ./example ./lib ./test",
