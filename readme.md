@@ -1,19 +1,16 @@
 # React Router Sitemap
 
-[![Build Status](https://travis-ci.org/kuflash/react-router-sitemap.svg?branch=master)](https://travis-ci.org/kuflash/react-router-sitemap)
+[![Build Status](https://travis-ci.org/kuflash/react-router-sitemap.svg?branch=master)](https://travis-ci.org/kuflash/react-router-sitemap) [![npm version](https://badge.fury.io/js/react-router-sitemap.svg)](https://badge.fury.io/js/react-router-sitemap)
 
-Модуль для генерации карты сайта по конфигурации `react-router`.
-Может фильтровать пути, а также заменять динамические параметры вида `:paramName`
-на переданные значения.
+Module for generate sitemap by [React Router](https://www.npmjs.com/package/react-router) configuration. Also it can filter paths and replace params (like a `:paramName`) in dynamic paths.
 
-## Установка
+## Install
 
 `npm i --save react-router-sitemap`
 
-## Пример использования
+## Usage
 
-Для начала необходимо, чтобы кофигурация маршрутов в вашем сайте была вынесена
-в отдельный модуль. Примерно такого вида:
+You need have module with router configuration. For example:
 
 `router.jsx`
 ```js
@@ -30,116 +27,55 @@ export default (
 	</Route>
 );
 ```
+And need create script which will run from command line or on server.
 
-Далее необходимо создать файл, который будет запускаться с помощью node.js
-во время сборки, либо на сервере. В этом файле будут импортироваться
-конфигурация маршрутов и модуль для генерации карты сайта:
+_Please note that in this case you need a module 'babel-register' to work with the ES2105 syntax and `.jsx` format._
 
 `sitemap-builder.js`
+
 ```js
 require('babel-register');
 
 const router = require('./router').default;
-const buildSitemap = require('react-router-sitemap').default;
+const Sitemap = require('../').default;
 
-buildSitemap({ router });
+(
+	new Sitemap(router)
+		.build('http://my-site.ru')
+		.save('./sitemap.xml')
+);
 ```
 
-Это минимальная конфигурация модуля. После запуска данного скрипта
-рядом будет создан файл `sitemap.xml` со всеми путями,
-описанными в кофигурации `react-router`.
+It's minimal example. After running the script next file will be created `sitemap.xml` which included all paths, described configuration `react-router`.
 
-## Алгоритм работы модуля
+More detailed example you can see in the `example` directory. And explore detailed [API](api.md).
 
-1. Преобразование роутера в список путей.
-2. Фильтрация путей.
-3. Замена парметров вида `:paramName` на переданные значения.
-4. Генерация карты сайта.
-5. Сохранение карты сайта в файл.
 
-## API
+## [API](api.md)
+Explore public API for usage of module.
 
-### buildSitemap(config)
+## License
 
-Доступна при стандартном импортировании модуля.
-Гененрирует карту сайта и сохраняет ее в файл по указанному пути.
+React Router Sitemap is freely distributable under the terms of the MIT license.
 
-#### config
-**Тип**: `Object`<br>
-**Формат**: `{ router, filter, params, hostname, dist }`
+MIT License
 
-##### router (required)
-**Тип**: `Object`<br>
-**По умолчанию**: `null`<br>
-**Описание**: Конфигурация маршрутов в формате `react-router`
+Copyright (c) 2016 kuflash
 
-##### filter
-**Тип**: `Object`<br>
-**Формат**: `{ isValid, rules }`<br>
-**По умолчанию**: `null`<br>
-**Описание**: Правила для фильтрации путей.
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-**Пример**:<br>
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-Оставит пути удовлетворяющие правилам в массиве `rules`
-```js
-{
-	isValid: true,
-	rules: [
-		/\/auth/,
-		/\/home/,
-	]
-}
-```
-
-Удалит пути удовлетворяющие правилам в массиве `rules`
-```js
-{
-	isValid: false,
-	rules: [
-		/\/auth/,
-		/\/home/,
-	]
-}
-```
-
-##### params
-
-**Тип**: `Object`<br>
-**По умолчанию**: `null`<br>
-**Описание**: Правила для замены парметров вида `:paramName` на переданные значения.
-Ключами этого объекта являются пути в которых необходимо заменить параметры.
-Значением этих ключей - массив объектов с определенным форматом.
-
-**Пример**:<br>
-
-```js
-{
-	'/path/:paramName': [
-		{ paramName: 'one' },
-		{ paramName: 'two' },
-		{ paramName: ['three', 'four'] },
-	],
-}
-```
-
-Результатом применения таких правил будет следующий массив путей:
-
-```js
-[
-	'/path/one',
-	'/path/two',
-	'/path/three',
-	'/path/four',
-]
-```
-
-##### hostname
-**Тип**: `String`<br>
-**По умолчанию**: `http://localhost`<br>
-**Описание**: Имя хоста вашего сайта
-
-##### dist
-**Тип**: `String`<br>
-**По умолчанию**: `./sitemap.xml`<br>
-**Описание**: Путь и название файла, куда будет сохранена карта сайта
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.

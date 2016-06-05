@@ -1,8 +1,7 @@
 export {
 	default,
-	buildSitemap,
-	buildPaths,
-	parseRoutes,
-	filterPaths,
-	applyParams,
+	sitemapBuilder,
+	routesParser,
+	pathsFilter,
+	paramsApplier,
 } from './lib';
