@@ -1,5 +1,5 @@
 import 'jasmine-collection-matchers';
-import applyValues from '../../../lib/param-rules-applier/values-applier';
+import applyValues from '../../../lib/params-applier/values-applier';
 
 describe('values applier', () => {
 

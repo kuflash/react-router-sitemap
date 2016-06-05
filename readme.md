@@ -2,18 +2,15 @@
 
 [![Build Status](https://travis-ci.org/kuflash/react-router-sitemap.svg?branch=master)](https://travis-ci.org/kuflash/react-router-sitemap)
 
-Модуль для генерации карты сайта по конфигурации `react-router`.
-Может фильтровать пути, а также заменять динамические параметры вида `:paramName`
-на переданные значения.
+Module for generate sitemap by [React Router](https://www.npmjs.com/package/react-router) configuration. Also it can filter paths and replace params (like a `:paramName`) in dynamic paths.
 
-## Установка
+## Install
 
 `npm i --save react-router-sitemap`
 
-## Пример использования
+## Usage
 
-Для начала необходимо, чтобы кофигурация маршрутов в вашем сайте была вынесена
-в отдельный модуль. Примерно такого вида:
+You need have module with router configuration. For example:
 
 `router.jsx`
 ```js
@@ -30,116 +27,29 @@ export default (
 	</Route>
 );
 ```
+And need create script which will run from command line or on server.
 
-Далее необходимо создать файл, который будет запускаться с помощью node.js
-во время сборки, либо на сервере. В этом файле будут импортироваться
-конфигурация маршрутов и модуль для генерации карты сайта:
+_Please note that in this case you need a module 'babel-register' to work with the ES2105 syntax and `.jsx` format._
 
 `sitemap-builder.js`
+
 ```js
 require('babel-register');
 
 const router = require('./router').default;
-const buildSitemap = require('react-router-sitemap').default;
+const Sitemap = require('../').default;
 
-buildSitemap({ router });
+(
+	new Sitemap(router)
+		.build('http://my-site.ru')
+		.save('./sitemap.xml')
+);
 ```
 
-Это минимальная конфигурация модуля. После запуска данного скрипта
-рядом будет создан файл `sitemap.xml` со всеми путями,
-описанными в кофигурации `react-router`.
+It's minimal example. After running the script next file will be created `sitemap.xml` which included all paths, described configuration `react-router`.
 
-## Алгоритм работы модуля
+More detailed example you can see in the `example` directory. And explore detailed [API](api.md).
 
-1. Преобразование роутера в список путей.
-2. Фильтрация путей.
-3. Замена парметров вида `:paramName` на переданные значения.
-4. Генерация карты сайта.
-5. Сохранение карты сайта в файл.
 
-## API
-
-### buildSitemap(config)
-
-Доступна при стандартном импортировании модуля.
-Гененрирует карту сайта и сохраняет ее в файл по указанному пути.
-
-#### config
-**Тип**: `Object`<br>
-**Формат**: `{ router, filter, params, hostname, dist }`
-
-##### router (required)
-**Тип**: `Object`<br>
-**По умолчанию**: `null`<br>
-**Описание**: Конфигурация маршрутов в формате `react-router`
-
-##### filter
-**Тип**: `Object`<br>
-**Формат**: `{ isValid, rules }`<br>
-**По умолчанию**: `null`<br>
-**Описание**: Правила для фильтрации путей.
-
-**Пример**:<br>
-
-Оставит пути удовлетворяющие правилам в массиве `rules`
-```js
-{
-	isValid: true,
-	rules: [
-		/\/auth/,
-		/\/home/,
-	]
-}
-```
-
-Удалит пути удовлетворяющие правилам в массиве `rules`
-```js
-{
-	isValid: false,
-	rules: [
-		/\/auth/,
-		/\/home/,
-	]
-}
-```
-
-##### params
-
-**Тип**: `Object`<br>
-**По умолчанию**: `null`<br>
-**Описание**: Правила для замены парметров вида `:paramName` на переданные значения.
-Ключами этого объекта являются пути в которых необходимо заменить параметры.
-Значением этих ключей - массив объектов с определенным форматом.
-
-**Пример**:<br>
-
-```js
-{
-	'/path/:paramName': [
-		{ paramName: 'one' },
-		{ paramName: 'two' },
-		{ paramName: ['three', 'four'] },
-	],
-}
-```
-
-Результатом применения таких правил будет следующий массив путей:
-
-```js
-[
-	'/path/one',
-	'/path/two',
-	'/path/three',
-	'/path/four',
-]
-```
-
-##### hostname
-**Тип**: `String`<br>
-**По умолчанию**: `http://localhost`<br>
-**Описание**: Имя хоста вашего сайта
-
-##### dist
-**Тип**: `String`<br>
-**По умолчанию**: `./sitemap.xml`<br>
-**Описание**: Путь и название файла, куда будет сохранена карта сайта
+## [API](api.md)
+Explore public API for usage of module.

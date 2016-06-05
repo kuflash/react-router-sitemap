@@ -6,11 +6,13 @@
 	"scripts": {
 		"lint": "eslint --ext .js,.jsx ./config ./example ./lib ./test",
 		"test": "karma start ./config/karma.config.js",
-		"example": "cd example && node ./sitemap-builder.js"
+		"example": "cd example && node ./sitemap-builder.js",
+		"documentation": "documentation build ./lib ./lib/routes-parser ./lib/paths-filter ./lib/params-applier ./lib/sitemap-builder -f md > api.md"
 	},
 	"author": "Igor Uvarov <kuflash@ya.ru> (http://kuflash.ru)",
 	"license": "MIT",
 	"devDependencies": {
+		"documentation": "git://github.com/documentationjs/documentation.git#v4.0.0-beta5",
 		"eslint": "^2.10.1",
 		"eslint-plugin-react": "^5.1.1",
 		"jasmine-collection-matchers": "^0.2.0",
