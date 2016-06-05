@@ -1,6 +1,6 @@
 {
   "name": "react-router-sitemap",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Module to generate a sitemap for react-router configuration",
   "repository": {
     "type": "git",
