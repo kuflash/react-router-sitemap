@@ -1,6 +1,6 @@
 {
   "name": "react-router-sitemap",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Module to generate a sitemap for react-router configuration",
   "repository": {
     "type": "git",
@@ -14,7 +14,7 @@
     "build": "npm run lint && npm run test && webpack --config ./config/build.config.js",
     "example": "cd example && node ./sitemap-builder.js",
     "documentation": "documentation build ./lib ./lib/routes-parser ./lib/paths-filter ./lib/params-applier ./lib/sitemap-builder -f md > api.md",
-	"prepublish": "npm run build"
+    "prepublish": "npm run build"
   },
   "author": "Igor Uvarov <kuflash@ya.ru> (http://kuflash.ru)",
   "license": "MIT",
