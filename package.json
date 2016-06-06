@@ -6,21 +6,26 @@
     "type": "git",
     "url": "https://github.com/kuflash/react-router-sitemap.git"
   },
-  "main": "index.js",
+  "main": "index.es5.js",
+  "jsnext:main ": "index.js",
   "scripts": {
     "lint": "eslint --ext .js,.jsx ./config ./example ./lib ./test",
     "test": "karma start ./config/karma.config.js",
+    "build": "npm run lint && npm run test && webpack --config ./config/build.config.js",
     "example": "cd example && node ./sitemap-builder.js",
-    "documentation": "documentation build ./lib ./lib/routes-parser ./lib/paths-filter ./lib/params-applier ./lib/sitemap-builder -f md > api.md"
+    "documentation": "documentation build ./lib ./lib/routes-parser ./lib/paths-filter ./lib/params-applier ./lib/sitemap-builder -f md > api.md",
+	"prepublish": "npm run build"
   },
   "author": "Igor Uvarov <kuflash@ya.ru> (http://kuflash.ru)",
   "license": "MIT",
   "files": [
     "index.js",
+    "index.es5.js",
     "lib"
   ],
   "devDependencies": {
     "babel": "^6.5.2",
+    "babel-cli": "^6.9.0",
     "babel-core": "^6.7.7",
     "babel-eslint": "^6.0.4",
     "babel-loader": "^6.2.4",
@@ -42,7 +47,8 @@
     "karma-sourcemap-loader": "^0.3.7",
     "karma-webpack": "^1.7.0",
     "phantomjs-prebuilt": "^2.1.7",
-    "webpack": "^1.13.0"
+    "webpack": "^1.13.0",
+    "webpack-node-externals": "^1.2.0"
   },
   "dependencies": {
     "react": "^15.1.0",
