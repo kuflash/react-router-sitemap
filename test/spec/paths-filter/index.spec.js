@@ -57,4 +57,22 @@ describe('paths filter', () => {
 
 	});
 
+	it('return uniq paths', () => {
+
+		const paths = [
+			'/path-one',
+			'/path-one',
+			'/path-two',
+			'/path-two',
+		];
+
+		const etalon = [
+			'/path-one',
+			'/path-two',
+		];
+
+		expect(filterPaths(paths)).toEqual(etalon);
+
+	});
+
 });
