@@ -8,9 +8,9 @@
   },
   "keywords": [
     "react",
-	"react-router",
-	"sitemap",
-	"es2015"
+    "react-router",
+    "sitemap",
+    "es2015"
   ],
   "main": "index.es5.js",
   "jsnext:main ": "index.js",
