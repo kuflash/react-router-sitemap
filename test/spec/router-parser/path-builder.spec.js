@@ -26,4 +26,15 @@ describe('build path', () => {
 
 	});
 
+	it('return one slash', () => {
+
+		const baseRoute = '/';
+		const route = '/';
+		const etalon = '/';
+
+		expect(build(baseRoute)).toEqual(etalon);
+		expect(build(baseRoute, route)).toEqual(etalon);
+
+	});
+
 });
