@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/kuflash/react-router-sitemap.svg?branch=master)](https://travis-ci.org/kuflash/react-router-sitemap) [![npm version](https://badge.fury.io/js/react-router-sitemap.svg)](https://badge.fury.io/js/react-router-sitemap)
 
-Module for generate sitemap by [React Router](https://www.npmjs.com/package/react-router) configuration. Also it can filter paths and replace params (like a `:paramName`) in dynamic paths.
+Module for generating sitemaps using [React Router](https://www.npmjs.com/package/react-router) configuration. Also it can filter paths and replace params (like a `:paramName`) in dynamic paths.
 
 ## Install
 
@@ -10,7 +10,7 @@ Module for generate sitemap by [React Router](https://www.npmjs.com/package/reac
 
 ## Usage
 
-You need have module with router configuration. For example:
+You need to have a module with the router configuration. For example:
 
 `router.jsx`
 ```js
@@ -27,7 +27,7 @@ export default (
 	</Route>
 );
 ```
-And need create script which will run from command line or on server.
+And you need to create a script which will run from the command line or on the server.
 
 _Please note that in this case you need a module 'babel-register' to work with the ES2105 syntax and `.jsx` format._
 
@@ -46,13 +46,13 @@ const Sitemap = require('../').default;
 );
 ```
 
-It's minimal example. After running the script next file will be created `sitemap.xml` which included all paths, described configuration `react-router`.
+It's a minimal example. After running the script, a `sitemap.xml` file will be created, which includes all paths, described in the configuration of `react-router`.
 
-More detailed example you can see in the `example` directory. And explore detailed [API](api.md).
+A more detailed example can be found in the `example` directory. You can also explore the details of the [API](api.md).
 
 
 ## [API](api.md)
-Explore public API for usage of module.
+Explore the public API for using the module.
 
 ## License
 
