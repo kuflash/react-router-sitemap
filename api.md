@@ -85,7 +85,7 @@ in the path `/path/:param/:subparam`_
 ```javascript
 {
   '/path/:param/:subparam': [
-    { param: 'value', subparam: 'subvalue' }
+    { param: 'value', subparam: ['subvalue1', 'subvalue2'] }
   ]
 }
 ```
