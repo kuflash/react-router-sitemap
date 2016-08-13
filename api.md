@@ -10,7 +10,7 @@ import Sitemap from 'react-router-sitemap';
 const sitemap = (
   new Sitemap(<Route path='/home'>)
     .build('http://my-site.ru')
-    .save();
+    .save("./sitemap.xml");
 );
 ```
 
