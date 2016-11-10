@@ -1,6 +1,6 @@
 # Sitemap
 
-Generate sitemap by [React Router](https://www.npmjs.com/package/react-router) configuration.
+Generate a sitemap using the [React Router](https://www.npmjs.com/package/react-router) configuration.
 
 **Examples**
 
@@ -10,13 +10,13 @@ import Sitemap from 'react-router-sitemap';
 const sitemap = (
   new Sitemap(<Route path='/home'>)
     .build('http://my-site.ru')
-    .save();
+    .save("./sitemap.xml");
 );
 ```
 
 ## constructor
 
-Convert React Router config to array of paths.
+Convert a React Router config to an array of paths.
 
 **Parameters**
 
@@ -32,7 +32,7 @@ const sitemap = new Sitemap(<Route path='/home'>);
 
 ## filterPaths
 
-Filters path on the specified rules.
+Filter paths using the specified rules.
 
 **Parameters**
 
@@ -61,15 +61,15 @@ _Config for include `/auth` and `/thanks`_
 
 ## applyParams
 
-Replaces the dynamic parameters in paths the passed value.
+Replace the dynamic parameters in paths using the given values.
 
 **Parameters**
 
--   `paramsConfig` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)&lt;[String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String), [Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)>** Configuration for replace params.
+-   `paramsConfig` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)&lt;[String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String), [Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)>** Configuration for replacing params.
 
 **Examples**
 
-_Config for replace params `:param` in path `/path/:param`_
+_Config for replacing params `:param` in the path `/path/:param`_
 
 ```javascript
 {
@@ -79,13 +79,13 @@ _Config for replace params `:param` in path `/path/:param`_
 }
 ```
 
-_Config for replace params `:param` and `:subparam`
-in path `/path/:param/:subparam`_
+_Config for replacing params `:param` and `:subparam`
+in the path `/path/:param/:subparam`_
 
 ```javascript
 {
   '/path/:param/:subparam': [
-    { param: 'value', subparam: 'subvalue' }
+    { param: 'value', subparam: ['subvalue1', 'subvalue2'] }
   ]
 }
 ```
@@ -100,7 +100,7 @@ Convert array of paths to sitemap.
 
 ## save
 
-Save sitemap in file.
+Save the sitemap to a file.
 
 **Parameters**
 
@@ -108,7 +108,7 @@ Save sitemap in file.
 
 # paramsApplier
 
-Module for apply params in dynamic paths.
+Module for applying params in dynamic paths.
 
 **Parameters**
 
@@ -151,7 +151,7 @@ Returns **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refere
 
 # pathsFilter
 
-Module for filter array of paths.
+Module for filtering an array of paths.
 
 **Parameters**
 
@@ -189,7 +189,7 @@ Returns **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refere
 
 # routesParser
 
-Module for parsing result of execute function `createRoutes(<Route>)`
+Module for parsing the result of the `createRoutes(<Route>)` function.
 from [react-router](https://www.npmjs.com/package/react-router) package.
 
 **Parameters**
@@ -221,7 +221,7 @@ Returns **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refere
 
 # sitemapBuilder
 
-Module for build sitemap by array of paths. Using [sitemap](https://www.npmjs.com/package/sitemap) package.
+Module for building a sitemap using an array of paths. Uses the [sitemap](https://www.npmjs.com/package/sitemap) package.
 
 **Parameters**
 
@@ -238,4 +238,4 @@ const hostname = 'http://may-site.ru';
 const sitemap = buildSitemap(hostname, paths);
 ```
 
-Returns **Sitemap** Instance of [Sitemap](https://www.npmjs.com/package/sitemap).
+Returns **Sitemap** instance of [Sitemap](https://www.npmjs.com/package/sitemap).
