@@ -9,9 +9,11 @@ describe('sitemap builder', () => {
 			'/hello/',
 		];
 
+		const hostname = 'http://localhost';
+
 		const etalon = {
 			limit: 50000,
-			hostname: 'http://localhost',
+			hostname,
 			urls: [
 				{
 					url: '/hello/',
@@ -21,7 +23,7 @@ describe('sitemap builder', () => {
 			cache: ''
 		};
 
-		expect(buildSitemap(undefined, paths)).toHaveSameItems(etalon, true);
+		expect(buildSitemap(hostname, paths)).toHaveSameItems(etalon, true);
 
 	});
 
