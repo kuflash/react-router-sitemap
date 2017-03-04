@@ -16,7 +16,7 @@
   "jsnext:main ": "index.js",
   "scripts": {
     "lint": "eslint --ext .js,.jsx ./config ./example ./lib ./test",
-    "test": "karma start ./config/karma.config.js",
+    "test": "babel-node test/run.js",
     "build": "npm run lint && npm run test && webpack --config ./config/build.config.js",
     "example": "cd example && node ./sitemap-builder.js",
     "documentation": "documentation build ./lib ./lib/routes-parser ./lib/paths-filter ./lib/params-applier ./lib/sitemap-builder -f md > api.md",
@@ -41,6 +41,7 @@
     "documentation": "git://github.com/documentationjs/documentation.git#v4.0.0-beta5",
     "eslint": "^2.10.1",
     "eslint-plugin-react": "^5.1.1",
+    "jasmine": "^2.5.3",
     "jasmine-collection-matchers": "^0.2.0",
     "jasmine-core": "^2.4.1",
     "jasmine-expect": "^2.0.2",
