@@ -1,6 +1,6 @@
 # Sitemap
 
-Generate a sitemap using the [React Router](https://www.npmjs.com/package/react-router) configuration.
+Generate sitemap by [React Router](https://www.npmjs.com/package/react-router) configuration.
 
 **Examples**
 
@@ -16,7 +16,7 @@ const sitemap = (
 
 ## constructor
 
-Convert a React Router config to an array of paths.
+Convert React Router config to array of paths.
 
 **Parameters**
 
@@ -32,7 +32,7 @@ const sitemap = new Sitemap(<Route path='/home'>);
 
 ## filterPaths
 
-Filter paths using the specified rules.
+Filters path on the specified rules.
 
 **Parameters**
 
@@ -61,15 +61,15 @@ _Config for include `/auth` and `/thanks`_
 
 ## applyParams
 
-Replace the dynamic parameters in paths using the given values.
+Replaces the dynamic parameters in paths the passed value.
 
 **Parameters**
 
--   `paramsConfig` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)&lt;[String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String), [Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)>** Configuration for replacing params.
+-   `paramsConfig` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)&lt;[String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String), [Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)>** Configuration for replace params.
 
 **Examples**
 
-_Config for replacing params `:param` in the path `/path/:param`_
+_Config for replace params `:param` in path `/path/:param`_
 
 ```javascript
 {
@@ -79,8 +79,8 @@ _Config for replacing params `:param` in the path `/path/:param`_
 }
 ```
 
-_Config for replacing params `:param` and `:subparam`
-in the path `/path/:param/:subparam`_
+_Config for replace params `:param` and `:subparam`
+in path `/path/:param/:subparam`_
 
 ```javascript
 {
@@ -100,15 +100,35 @@ Convert array of paths to sitemap.
 
 ## save
 
-Save the sitemap to a file.
+Save sitemaps and sitemap index in files.
 
 **Parameters**
 
--   `dist` **[String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** The path and file name where the sitemap is saved.
+-   `dist` **[String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** The path and file name where the sitemap index is saved.
+-   `publicPath` **\[[String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)](default '/')** optional public path relative to hostname, default: '/'
+
+# pathsSplitter
+
+Module for splitting paths array in multiple arrays for support of large projects
+
+**Parameters**
+
+-   `paths` **\[[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)]** Initial paths array (flattened) (optional, default `[]`)
+-   `size` **\[[Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)]**  (optional, default `49999`)
+
+**Examples**
+
+```javascript
+import { pathsSplitter } from 'react-router-sitemap';
+
+const splitted = pathsSplitter(paths, 49999); // 49999 because of Google sitemap limits
+```
+
+Returns **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)>>** Array of Array of paths
 
 # paramsApplier
 
-Module for applying params in dynamic paths.
+Module for apply params in dynamic paths.
 
 **Parameters**
 
@@ -151,7 +171,7 @@ Returns **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refere
 
 # pathsFilter
 
-Module for filtering an array of paths.
+Module for filter array of paths.
 
 **Parameters**
 
@@ -189,7 +209,7 @@ Returns **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refere
 
 # routesParser
 
-Module for parsing the result of the `createRoutes(<Route>)` function.
+Module for parsing result of execute function `createRoutes(<Route>)`
 from [react-router](https://www.npmjs.com/package/react-router) package.
 
 **Parameters**
@@ -221,7 +241,7 @@ Returns **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refere
 
 # sitemapBuilder
 
-Module for building a sitemap using an array of paths. Uses the [sitemap](https://www.npmjs.com/package/sitemap) package.
+Module for build sitemap by array of paths. Using [sitemap](https://www.npmjs.com/package/sitemap) package.
 
 **Parameters**
 
@@ -238,4 +258,4 @@ const hostname = 'http://may-site.ru';
 const sitemap = buildSitemap(hostname, paths);
 ```
 
-Returns **Sitemap** instance of [Sitemap](https://www.npmjs.com/package/sitemap).
+Returns **Sitemap** Instance of [Sitemap](https://www.npmjs.com/package/sitemap).
