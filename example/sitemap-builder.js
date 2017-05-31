@@ -1,7 +1,7 @@
 require('babel-register');
 
 const router = require('./router').default;
-const Sitemap = require('../').default;
+const Sitemap = require('../lib').default;
 
 const filterConfig = {
 	isValid: false,
@@ -53,6 +53,6 @@ const paramsConfig = {
 	new Sitemap(router)
 		.filterPaths(filterConfig)
 		.applyParams(paramsConfig)
-		.build('http://my-site.ru')
+		.build('http://my-site.ru', { limitCountPaths: 5000 })
 		.save('./sitemap.xml', '/static/')
 );
