@@ -13,11 +13,11 @@ const filterConfig = {
 
 
 // Setup some random projects
-const alphabet = "abcdefghijklmnopqrstuvwxyz".split('');
+const alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
 const lotOfNames = [];
 
 function produceItem(arr, char) {
-	return arr.map(c => { lotOfNames.push(`${c}-${char}`) });
+	return arr.map(c => { lotOfNames.push(`${c}-${char}`); });
 }
 
 alphabet.map(c => produceItem(alphabet, c));
