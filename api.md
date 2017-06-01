@@ -97,14 +97,34 @@ Convert array of paths to sitemap.
 **Parameters**
 
 -   `hostname` **[String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** The root name of your site.
+-   `$1` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)**
+    -   `$1.limitCountPaths`   (optional, default `49999`)
 
 ## save
 
-Save the sitemap to a file.
+Save sitemaps and sitemap index in files.
 
 **Parameters**
 
--   `dist` **[String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** The path and file name where the sitemap is saved.
+-   `dist` **[String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** The path and file name where the sitemap index is saved.
+-   `publicPath` **\[[String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)](default '/')** optional public path relative to hostname, default: '/'
+
+# pathsSplitter
+
+Module for splitting paths array in multiple arrays for support of large projects
+
+**Parameters**
+
+-   `paths` **\[[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)]** Initial paths array (flattened) (optional, default `[]`)
+-   `size` **\[[Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)]**  (optional, default `49999`)
+
+**Examples**
+
+```javascript
+import { pathsSplitter } from 'react-router-sitemap';
+
+const splitted = pathsSplitter(paths, 49999); // 49999 because of Google sitemap limits
+```
 
 # paramsApplier
 
