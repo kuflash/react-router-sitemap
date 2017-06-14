@@ -97,7 +97,7 @@ Convert array of paths to sitemap.
 **Parameters**
 
 -   `hostname` **[String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** The root name of your site.
--   `$1` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)**
+-   `$1` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)**  (optional, default `{}`)
     -   `$1.limitCountPaths`   (optional, default `49999`)
 
 ## save
