@@ -58,7 +58,7 @@
   },
   "peerDependencies": {
     "react": "^15.1.0 || ^16.0.0",
-    "react-router": "^2.3.0"
+    "react-router": "^2.3.0 || ^3.2.1"
   },
   "dependencies": {
     "sitemap": "^1.6.0"
