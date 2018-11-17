@@ -36,12 +36,12 @@ Filter paths using the specified rules.
 
 **Parameters**
 
--   `filterConfig` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** Filter configuration
+-   `filterConfig` **[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** Filter configuration
 
 **Properties**
 
--   `rules` **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[RegExp](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp)>** List filter rules.
--   `isValid` **[Boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** Flag that defines a way to filter paths.
+-   `rules` **[Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[RegExp](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/RegExp)>** List filter rules.
+-   `isValid` **[Boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** Flag that defines a way to filter paths.
     If `true`, the path satisfying the rules will be included.
     If `false`, the path satisfying the rules will be excluded.
 
@@ -65,7 +65,7 @@ Replace the dynamic parameters in paths using the given values.
 
 **Parameters**
 
--   `paramsConfig` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)&lt;[String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String), [Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)>** Configuration for replacing params.
+-   `paramsConfig` **[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)&lt;[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String), [Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)>** Configuration for replacing params.
 
 **Examples**
 
@@ -96,8 +96,8 @@ Convert array of paths to sitemap.
 
 **Parameters**
 
--   `hostname` **[String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** The root name of your site.
--   `$1` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)**  (optional, default `{}`)
+-   `hostname` **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** The root name of your site.
+-   `$1` **[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)**  (optional, default `{}`)
     -   `$1.limitCountPaths`   (optional, default `49999`)
 
 ## save
@@ -106,8 +106,8 @@ Save sitemaps and sitemap index in files.
 
 **Parameters**
 
--   `dist` **[String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** The path and file name where the sitemap index is saved.
--   `publicPath` **\[[String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)](default '/')** optional public path relative to hostname, default: '/'
+-   `dist` **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** The path and file name where the sitemap index is saved.
+-   `publicPath` **\[[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)](default '/')** optional public path relative to hostname, default: '/'
 
 # pathsSplitter
 
@@ -115,8 +115,8 @@ Module for splitting paths array in multiple arrays for support of large project
 
 **Parameters**
 
--   `paths` **\[[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)]** Initial paths array (flattened) (optional, default `[]`)
--   `size` **\[[Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)]**  (optional, default `49999`)
+-   `paths` **\[[Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)]** Initial paths array (flattened) (optional, default `[]`)
+-   `size` **\[[Number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)]**  (optional, default `49999`)
 
 **Examples**
 
@@ -132,8 +132,8 @@ Module for applying params in dynamic paths.
 
 **Parameters**
 
--   `paths` **\[[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)>]** Array of paths
--   `paramsConfig` **\[[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)&lt;[String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String), [Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)>]** Configuration matching parameters and values
+-   `paths` **\[[Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)>]** Array of paths
+-   `paramsConfig` **\[[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)&lt;[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String), [Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)>]** Configuration matching parameters and values
 
 **Examples**
 
@@ -167,7 +167,7 @@ const paths = applyParams(paths, config);
 // ['/path/a/1', '/path/b/2', '/path/b/3']
 ```
 
-Returns **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)>** Array of paths
+Returns **[Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)>** Array of paths
 
 # pathsFilter
 
@@ -175,9 +175,9 @@ Module for filtering an array of paths.
 
 **Parameters**
 
--   `paths` **\[[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)>]** Array of paths
--   `rules` **\[[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[RegExp](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp)>]** Filter rules
--   `isValidRules` **\[[Boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)]** Flag that defines a way to filter paths.
+-   `paths` **\[[Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)>]** Array of paths
+-   `rules` **\[[Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[RegExp](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/RegExp)>]** Filter rules
+-   `isValidRules` **\[[Boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)]** Flag that defines a way to filter paths.
     If `true`, the path satisfying the rules will be included.
     If `false`, the path satisfying the rules will be excluded.
 
@@ -205,23 +205,43 @@ const paths = filterPaths(paths, rules, isValidRules);
 // ['/auth']
 ```
 
-Returns **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)>** Array of paths.
+Returns **[Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)>** Array of paths.
 
-# routesParser
+# createRoutes
 
-Module for parsing the result of the `createRoutes(<Route>)` function.
-from [react-router](https://www.npmjs.com/package/react-router) package.
+Creates and returns an array of routes from the given object which
+may be a JSX route, a plain object route, or an array of either.
 
 **Parameters**
 
--   `routes` **\[([Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) \| [Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object))]** Result of execute function
-    `createRoutes(<Route>)` (optional, default `[]`)
--   `basePath` **\[[String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)]** Prefix for all paths (optional, default `''`)
+-   `routes` **Route** React Router configuration.
 
 **Examples**
 
 ```javascript
-import { createRoutes } from 'react-router';
+import { routesCreater as createRoutes } from 'react-router-sitemap';
+import { routesParser as parseRoutes } from 'react-router-sitemap';
+
+const routes = createRoutes(<Route path='/home'>);
+const paths = parseRoutes(routes); // ['/home']
+```
+
+Returns **[Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)>** 
+
+# routesParser
+
+Module for parsing the result of the `createRoutes(<Route>)` function.
+
+**Parameters**
+
+-   `routes` **\[([Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array) \| [Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object))]** Result of execute function
+    `createRoutes(<Route>)` (optional, default `[]`)
+-   `basePath` **\[[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)]** Prefix for all paths (optional, default `''`)
+
+**Examples**
+
+```javascript
+import { routesCreater as createRoutes } from 'react-router-sitemap';
 import { routesParser as parseRoutes } from 'react-router-sitemap';
 
 const routes = createRoutes(<Route path='/home'>);
@@ -229,7 +249,7 @@ const paths = parseRoutes(routes); // ['/home']
 ```
 
 ```javascript
-import { createRoutes } from 'react-router';
+import { routesCreater as createRoutes } from 'react-router-sitemap';
 import { routesParser as parseRoutes } from 'react-router-sitemap';
 
 const routes = createRoutes(<Route path='/home'>);
@@ -237,7 +257,7 @@ const prefix = '/prefix';
 const paths = parseRoutes(routes, prefix); // ['/prefix/home']
 ```
 
-Returns **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)>** Array of paths
+Returns **[Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)>** Array of paths
 
 # sitemapBuilder
 
@@ -245,8 +265,8 @@ Module for building a sitemap using an array of paths. Uses the [sitemap](https:
 
 **Parameters**
 
--   `hostname` **\[[String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)]** The root name of your site
--   `paths` **\[[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)>]** Array of paths
+-   `hostname` **\[[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)]** The root name of your site
+-   `paths` **\[[Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)>]** Array of paths
 
 **Examples**
 
