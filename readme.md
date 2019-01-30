@@ -27,6 +27,23 @@ export default (
 	</Route>
 );
 ```
+If you are using v4 `react-router`, your `router.jsx` might be:
+```js
+import React from 'react';
+import { Switch, Route } from 'react-router';
+
+export default (
+	// Switch is added in v4 react-router
+	<Switch>
+		<Route path='/' />
+		<Route path='/about' />
+		<Route path='/projects' />
+		<Route path='/contacts' />
+		<Route path='/auth' />
+		<Route /> // No-match case
+	</Switch>
+);
+```
 And you need to create a script which will run from the command line or on the server.
 
 _Please note that in this case you need a module 'babel-register' to work with the ES2105 syntax and `.jsx` format._
