@@ -49,10 +49,21 @@ const paramsConfig = {
 	]
 };
 
+const locales = ['en', 'de'];
+const defaultLocale = 'en';
+const batchOptions = [];
+const alternateRoutes = {};
+
+function refinePaths(paths, lang) {
+	return paths.map(path => path); // change whatever required
+}
+
 (
 	new Sitemap(router)
 		.filterPaths(filterConfig)
 		.applyParams(paramsConfig)
+		.setItemOptions(batchOptions)
+		.localize(locales, alternateRoutes, paramsConfig, filterConfig, refinePaths, defaultLocale)
 		.build('http://my-site.ru', { limitCountPaths: 5000 })
 		.save('./sitemap.xml', '/static/')
 );
