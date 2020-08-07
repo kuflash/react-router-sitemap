@@ -30,6 +30,14 @@ import Sitemap from 'react-router-sitemap';
 const sitemap = new Sitemap(<Route path='/home'>);
 ```
 
+## localize
+
+
+
+## setItemOptions
+
+
+
 ## filterPaths
 
 Filter paths using the specified rules.
@@ -267,6 +275,9 @@ Module for building a sitemap using an array of paths. Uses the [sitemap](https:
 
 -   `hostname` **\[[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)]** The root name of your site
 -   `paths` **\[[Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)>]** Array of paths
+-   `alternatePaths` **\[[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)]** Localized Paths
+-   `options` **\[[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)]** Sitemap Options
+-   `batchOptionsArr` **\[[Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)]** Sitemap Items Options as a batch
 
 **Examples**
 
@@ -274,8 +285,11 @@ Module for building a sitemap using an array of paths. Uses the [sitemap](https:
 import { sitemapBuilder as buildSitemap } from 'react-router-sitemap';
 
 const paths = ['/', 'home', '/contacts'];
+const alternatePaths = { en: ['/'], es: [], de: [] }
+const options = {}
+const batchOptionsArr = []
 const hostname = 'http://may-site.ru';
-const sitemap = buildSitemap(hostname, paths);
+const sitemap = buildSitemap(hostname, paths, alternatePaths, options, batchOptionsArr);
 ```
 
 Returns **Sitemap** instance of [Sitemap](https://www.npmjs.com/package/sitemap).
